@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-greatvibes: "";
+  --font-pressstart2p: "";
+}
+
+.font-fancy {
+  font-family: var(--font-greatvibes);
+}
+
+.font-press {
+  font-family: var(--font-pressstart2p);
+  letter-spacing: 0.5px;
 }
 
 @theme inline {
