@@ -14,7 +14,7 @@ export default function Home() {
           </h1>
 
           <p className="text-slate-300 mb-10 text-xs">
-            Explore three simple paths to a stronger, sounder Canadian future.
+            Explore four simple paths to a stronger, sounder Canadian future.
           </p>
 
           <div className="grid gap-4 sm:grid-cols-3 text-[10px]">
