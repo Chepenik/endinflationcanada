@@ -8,8 +8,7 @@ export default function Home() {
 
           {/* Cursive Title */}
           <h1
-            className="text-5xl md:text-7xl mb-8 font-fancy"
-            style={{ color: "#F7931A" }}
+            className="text-5xl md:text-7xl mb-8 font-fancy text-orange-500"
           >
             End Inflation Canada
           </h1>
@@ -22,7 +21,7 @@ export default function Home() {
 
             {/* Button 1 */}
             <a
-              href="https://www.canadianorangeparty.com/"
+              href="/one"
               target="_blank"
               rel="noopener noreferrer"
               className="py-3 px-4 rounded-lg border border-slate-600 bg-slate-800 text-slate-200 transition 
@@ -33,7 +32,7 @@ export default function Home() {
 
             {/* Button 2 */}
             <a
-              href="https://www.canadianorangeparty.com/"
+              href="/two"
               target="_blank"
               rel="noopener noreferrer"
               className="py-3 px-4 rounded-lg border border-slate-600 bg-slate-800 text-slate-200 transition 
@@ -44,7 +43,7 @@ export default function Home() {
 
             {/* Button 3 */}
             <a
-              href="https://www.canadianorangeparty.com/"
+              href="/three"
               target="_blank"
               rel="noopener noreferrer"
               className="py-3 px-4 rounded-lg border border-slate-600 bg-slate-800 text-slate-200 transition 
@@ -53,12 +52,22 @@ export default function Home() {
               Option 3
             </a>
 
+            {/* Button 5 */}
+            <a
+              href="/four"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-3 px-4 rounded-lg border border-slate-600 bg-slate-800 text-slate-200 transition 
+                         hover:border-[#F7931A] hover:text-[#F7931A] hover:shadow-[0_0_10px_#F7931A]"
+            >
+              Option 4
+            </a>
           </div>
         </div>
       </div>
 
       <footer className="w-full border-t border-slate-800 py-4 text-center text-xs text-slate-400">
-        a project by the Canadian Orange Party
+        A project by the Canadian Orange Party
       </footer>
     </main>
   );
