@@ -6,20 +6,22 @@ export default function Home() {
       <div className="flex-1 flex items-center justify-center px-4">
         <div className="max-w-xl w-full text-center">
 
-          {/* Cursive Title */}
+          {/* Cursive Title – slightly smaller + a bit higher */}
           <h1
-            className="text-5xl md:text-7xl mb-8 font-fancy text-orange-500"
+            className="mt-[-32px] text-4xl md:text-5xl mb-6 font-fancy text-orange-500"
           >
             End Inflation Canada
           </h1>
 
-          <p className="text-slate-300 mb-10 text-xs">
-            Explore four simple paths to a stronger, sounder Canadian future.
+          {/* New subtitle copy */}
+          <p className="text-slate-300 mb-10 text-[11px] md:text-xs">
+            Help us choose our first e-pamphlet and physical pamphlet by voting below.
           </p>
 
-          <div className="grid gap-4 sm:grid-cols-3 text-[10px]">
+          {/* Options */}
+          <div className="grid gap-4 grid-cols-2 md:grid-cols-4 text-[10px]">
 
-            {/* Button 1 */}
+            {/* Option 1 */}
             <a
               href="/one"
               target="_blank"
@@ -30,7 +32,7 @@ export default function Home() {
               Option 1
             </a>
 
-            {/* Button 2 */}
+            {/* Option 2 */}
             <a
               href="/two"
               target="_blank"
@@ -41,7 +43,7 @@ export default function Home() {
               Option 2
             </a>
 
-            {/* Button 3 */}
+            {/* Option 3 */}
             <a
               href="/three"
               target="_blank"
@@ -52,7 +54,7 @@ export default function Home() {
               Option 3
             </a>
 
-            {/* Button 5 */}
+            {/* Option 4 */}
             <a
               href="/four"
               target="_blank"
