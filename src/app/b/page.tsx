@@ -16,10 +16,10 @@ const pages = [
 export default function PamphletB() {
   const [pageIndex, setPageIndex] = useState(0);
   const current = pages[pageIndex];
-  const nextPage = pages[pageIndex + 1];
 
   return (
     <main className="min-h-screen bg-black text-white flex flex-col">
+      
       {/* Top Bar */}
       <header className="w-full px-4 py-3 border-b border-slate-800 flex justify-between items-center">
         <Link
@@ -35,51 +35,22 @@ export default function PamphletB() {
         </span>
       </header>
 
-      {/* Image Viewer */}
+      {/* Image Viewer – NO BORDER */}
       <section className="flex-1 flex items-center justify-center px-4 py-6">
-
-        {/* MOBILE — single page, FULL width, taller, easy to read */}
-        <div className="relative w-full h-[75vh] border border-slate-800 rounded-lg bg-black md:hidden">
+        <div className="relative w-full max-w-5xl h-[85vh] rounded-lg bg-black">
           <Image
             src={current.src}
             alt={current.alt}
             fill
             priority={pageIndex === 0}
-            className="object-contain p-2"
+            className="object-contain p-2 md:p-4"
           />
-        </div>
-
-        {/* DESKTOP — two-page spread */}
-        <div className="hidden md:flex w-full max-w-5xl h-[80vh] border border-slate-800 rounded-lg bg-black overflow-hidden">
-          
-          {/* Left page */}
-          <div className="relative w-1/2 h-full border-r border-slate-800">
-            <Image
-              src={current.src}
-              alt={current.alt}
-              fill
-              priority={pageIndex === 0}
-              className="object-contain p-4"
-            />
-          </div>
-
-          {/* Right page */}
-          <div className="relative w-1/2 h-full">
-            {nextPage && (
-              <Image
-                src={nextPage.src}
-                alt={nextPage.alt}
-                fill
-                className="object-contain p-4"
-              />
-            )}
-          </div>
-
         </div>
       </section>
 
       {/* Navigation */}
       <footer className="w-full px-4 py-4 border-t border-slate-800 flex justify-between items-center text-[10px] text-slate-300 font-press">
+
         <button
           onClick={() => setPageIndex(Math.max(0, pageIndex - 1))}
           disabled={pageIndex === 0}
@@ -89,9 +60,7 @@ export default function PamphletB() {
           ← Previous
         </button>
 
-        <span>
-          Page {pageIndex + 1} of {pages.length}
-        </span>
+        <span>Page {pageIndex + 1} of {pages.length}</span>
 
         <button
           onClick={() => setPageIndex(Math.min(pages.length - 1, pageIndex + 1))}
@@ -101,7 +70,9 @@ export default function PamphletB() {
         >
           Next →
         </button>
+
       </footer>
+
     </main>
   );
 }

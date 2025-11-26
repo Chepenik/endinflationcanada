@@ -7,6 +7,7 @@ export default function Home() {
   const [feedback, setFeedback] = useState("");
   const [charCount, setCharCount] = useState(0);
   const [status, setStatus] = useState<"" | "success" | "error">("");
+  const [showForm, setShowForm] = useState(false);
 
   const MAX_CHARS = 210;
   const MIN_CHARS = 21;
@@ -83,113 +84,139 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Feedback form – FormSubmit */}
-          <form
-            action="https://formsubmit.co/CanadianOrangeParty@protonmail.com"
-            method="POST"
-            onSubmit={handleSubmit}
-            className="mt-6 text-left bg-slate-900 border border-slate-800 rounded-xl p-4 md:p-6 space-y-4"
-          >
-            {/* FormSubmit config */}
-            <input
-              type="hidden"
-              name="_subject"
-              value="EndInflationCanada feedback"
-            />
-            <input type="hidden" name="_captcha" value="false" />
-            {/* redirect to success page AFTER submit */}
-            <input
-              type="hidden"
-              name="_next"
-              value="/success"
-            />
-            {/* nicer email layout */}
-            <input type="hidden" name="_template" value="table" />
-
-            <h2 className="text-xs md:text-sm text-slate-100 text-center mb-2">
-              Vote for your favorite print version and share feedback on the e-pamphlet.
-            </h2>
-
-            {/* Vote A/B */}
-            <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-4 text-xs">
-              <span className="text-slate-300 text-center md:text-left">
-                Which print pamphlet do you prefer?
-              </span>
-              <div className="flex items-center justify-center gap-4">
-                <label className="inline-flex items-center gap-1 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="choice"
-                    value="A"
-                    checked={choice === "A"}
-                    onChange={() => setChoice("A")}
-                    className="accent-[#F7931A]"
-                    required
-                  />
-                  <span>Print A</span>
-                </label>
-                <label className="inline-flex items-center gap-1 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="choice"
-                    value="B"
-                    checked={choice === "B"}
-                    onChange={() => setChoice("B")}
-                    className="accent-[#F7931A]"
-                    required
-                  />
-                  <span>Print B</span>
-                </label>
-              </div>
-            </div>
-
-            {/* Feedback textarea */}
-            <div className="space-y-2">
-              <label className="block text-xs text-slate-300">
-                Feedback on the e-pamphlet (min {MIN_CHARS} characters, max {MAX_CHARS})
-              </label>
-              <textarea
-                name="feedback"
-                value={feedback}
-                onChange={handleFeedbackChange}
-                rows={6}
-                minLength={MIN_CHARS}
-                maxLength={MAX_CHARS}
-                required
-                className="w-full rounded-lg border border-slate-700 bg-slate-950 text-xs p-3 outline-none 
-                           focus:border-[#F7931A] focus:ring-1 focus:ring-[#F7931A] resize-vertical"
-                placeholder="Tell us why you prefer A or B, and what you think of the e-pamphlet."
-              />
-              <div className="flex justify-between text-[10px] text-slate-400">
-                <span>{charCount} / {MAX_CHARS} characters</span>
-                {charCount < MIN_CHARS && (
-                  <span>Need at least {MIN_CHARS - charCount} more characters</span>
-                )}
-              </div>
-            </div>
-
-            {/* Status + submit */}
-            {status === "error" && (
-              <p className="text-[10px] text-red-400">
-                Please pick Print A or Print B and write at least {MIN_CHARS} characters of feedback.
-              </p>
-            )}
-            {status === "success" && (
-              <p className="text-[10px] text-emerald-400">
-                Sending your feedback… 🍁
-              </p>
-            )}
-
-            <div className="flex justify-center pt-2">
+          {/* Toggle button for form */}
+          {!showForm && (
+            <div className="flex justify-center">
               <button
-                type="submit"
-                className="text-xs px-5 py-2 rounded-lg border border-slate-600 bg-slate-800 
+                type="button"
+                onClick={() => {
+                  setShowForm(true);
+                  setStatus("");
+                }}
+                className="mt-2 text-xs px-6 py-2 rounded-lg border border-slate-600 bg-slate-800 
                            hover:border-[#F7931A] hover:text-[#F7931A] hover:shadow-[0_0_10px_#F7931A] transition"
               >
-                Submit feedback
+                Vote & submit feedback
               </button>
             </div>
-          </form>
+          )}
+
+          {/* Collapsible Feedback form – FormSubmit */}
+          {showForm && (
+            <form
+              action="https://formsubmit.co/CanadianOrangeParty@protonmail.com"
+              method="POST"
+              onSubmit={handleSubmit}
+              className="mt-4 text-left bg-slate-900 border border-slate-800 rounded-xl p-4 md:p-6 space-y-4"
+            >
+              {/* FormSubmit config */}
+              <input
+                type="hidden"
+                name="_subject"
+                value="EndInflationCanada feedback"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="/success" />
+              <input type="hidden" name="_template" value="table" />
+
+              <div className="flex items-start justify-between gap-2">
+                <h2 className="text-xs md:text-sm text-slate-100 text-center w-full">
+                  Vote for your favorite print version and share feedback on the e-pamphlet.
+                </h2>
+              </div>
+
+              {/* Vote A/B */}
+              <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-4 text-xs">
+                <span className="text-slate-300 text-center md:text-left">
+                  Which print pamphlet do you prefer?
+                </span>
+                <div className="flex items-center justify-center gap-4">
+                  <label className="inline-flex items-center gap-1 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="choice"
+                      value="A"
+                      checked={choice === "A"}
+                      onChange={() => setChoice("A")}
+                      className="accent-[#F7931A]"
+                      required
+                    />
+                    <span>Print A</span>
+                  </label>
+                  <label className="inline-flex items-center gap-1 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="choice"
+                      value="B"
+                      checked={choice === "B"}
+                      onChange={() => setChoice("B")}
+                      className="accent-[#F7931A]"
+                      required
+                    />
+                    <span>Print B</span>
+                  </label>
+                </div>
+              </div>
+
+              {/* Feedback textarea */}
+              <div className="space-y-2">
+                <label className="block text-xs text-slate-300">
+                  Feedback on the e-pamphlet (min {MIN_CHARS} characters, max {MAX_CHARS})
+                </label>
+                <textarea
+                  name="feedback"
+                  value={feedback}
+                  onChange={handleFeedbackChange}
+                  rows={6}
+                  minLength={MIN_CHARS}
+                  maxLength={MAX_CHARS}
+                  required
+                  className="w-full rounded-lg border border-slate-700 bg-slate-950 text-xs p-3 outline-none 
+                             focus:border-[#F7931A] focus:ring-1 focus:ring-[#F7931A] resize-vertical"
+                  placeholder="Tell us why you prefer A or B, and what you think of the e-pamphlet."
+                />
+                <div className="flex justify-between text-[10px] text-slate-400">
+                  <span>{charCount} / {MAX_CHARS} characters</span>
+                  {charCount < MIN_CHARS && (
+                    <span>Need at least {MIN_CHARS - charCount} more characters</span>
+                  )}
+                </div>
+              </div>
+
+              {/* Status + submit */}
+              {status === "error" && (
+                <p className="text-[10px] text-red-400">
+                  Please pick Print A or Print B and write at least {MIN_CHARS} characters of feedback.
+                </p>
+              )}
+              {status === "success" && (
+                <p className="text-[10px] text-emerald-400">
+                  Sending your feedback… 🍁
+                </p>
+              )}
+
+              <div className="flex items-center justify-between pt-2 text-[10px]">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowForm(false);
+                    setStatus("");
+                  }}
+                  className="text-slate-500 hover:text-slate-300 underline-offset-2 hover:underline"
+                >
+                  Close feedback form
+                </button>
+
+                <button
+                  type="submit"
+                  className="text-xs px-5 py-2 rounded-lg border border-slate-600 bg-slate-800 
+                             hover:border-[#F7931A] hover:text-[#F7931A] hover:shadow-[0_0_10px_#F7931A] transition"
+                >
+                  Submit feedback
+                </button>
+              </div>
+            </form>
+          )}
         </div>
       </div>
 
