@@ -85,7 +85,7 @@ export default function Home() {
 
           {/* Feedback form – FormSubmit */}
           <form
-            action="https://formsubmit.co/chepenikconor@gmail.com"
+            action="https://formsubmit.co/CanadianOrangeParty@protonmail.com"
             method="POST"
             onSubmit={handleSubmit}
             className="mt-6 text-left bg-slate-900 border border-slate-800 rounded-xl p-4 md:p-6 space-y-4"
