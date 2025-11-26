@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function PageThree() {
+export default function PageTwo() {
   return (
     <main className="min-h-screen bg-black text-white flex flex-col">
 
@@ -16,26 +16,15 @@ export default function PageThree() {
         >
           ← Back
         </Link>
-
-        <span className="text-slate-400 text-[10px] font-press">P.3</span>
+        <span className="text-slate-400 text-[10px] font-press">P.2</span>
       </header>
-
-      {/* Image Container */}
-      <section className="flex-1 flex items-center justify-center px-4 py-6">
-        <div className="relative w-full max-w-5xl aspect-[3/2] border border-slate-800 rounded">
-          <Image
-            src="/P3.PNG.png"
-            alt="Pamphlet Page 3"
-            fill
-            priority
-            className="object-contain"
-          />
-        </div>
-      </section>
-
+      <br />
+      <h1
+        className="text-4xl text-center md:text-5xl mb-4 font-fancy text-orange-500"
+        >E-phamplet goes here?</h1>
       {/* Footer */}
       <footer className="w-full border-t border-slate-800 py-3 text-center text-[10px] text-slate-500 font-press">
-        A project by the Canadian Orange Party
+        A project by the Canadian Orange Party 
       </footer>
     </main>
   );
