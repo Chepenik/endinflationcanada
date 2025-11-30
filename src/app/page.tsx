@@ -119,12 +119,6 @@ export default function Home() {
               <input type="hidden" name="_next" value="/success" />
               <input type="hidden" name="_template" value="table" />
 
-              <div className="flex items-start justify-between gap-2">
-                <h2 className="text-xs md:text-sm text-slate-100 text-center w-full">
-                  Vote for your favorite print version and share feedback on the e-pamphlet.
-                </h2>
-              </div>
-
               {/* Vote A/B */}
               <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-4 text-xs">
                 <span className="text-slate-300 text-center md:text-left">
