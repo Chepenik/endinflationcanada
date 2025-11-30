@@ -9,8 +9,7 @@ export default function Home() {
   const [status, setStatus] = useState<"" | "success" | "error">("");
   const [showForm, setShowForm] = useState(false);
 
-  const MAX_CHARS = 210;
-  const MIN_CHARS = 21;
+  const MAX_CHARS = 121;
 
   function handleFeedbackChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     const value = e.target.value;
@@ -26,13 +25,12 @@ export default function Home() {
 
     const trimmed = feedback.trim();
 
-    if (!choice || trimmed.length < MIN_CHARS) {
+    if (!choice || trimmed.length === 0) {
       e.preventDefault();
       setStatus("error");
       return;
     }
 
-    // Let browser POST to FormSubmit
     setStatus("success");
   }
 
@@ -84,7 +82,7 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Toggle button for form */}
+          {/* Toggle button */}
           {!showForm && (
             <div className="flex justify-center">
               <button
@@ -101,7 +99,7 @@ export default function Home() {
             </div>
           )}
 
-          {/* Collapsible Feedback form – FormSubmit */}
+          {/* Feedback form */}
           {showForm && (
             <form
               action="https://formsubmit.co/CanadianOrangeParty@protonmail.com"
@@ -109,12 +107,7 @@ export default function Home() {
               onSubmit={handleSubmit}
               className="mt-4 text-left bg-slate-900 border border-slate-800 rounded-xl p-4 md:p-6 space-y-4"
             >
-              {/* FormSubmit config */}
-              <input
-                type="hidden"
-                name="_subject"
-                value="EndInflationCanada feedback"
-              />
+              <input type="hidden" name="_subject" value="EndInflationCanada feedback" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_next" value="/success" />
               <input type="hidden" name="_template" value="table" />
@@ -155,14 +148,13 @@ export default function Home() {
               {/* Feedback textarea */}
               <div className="space-y-2">
                 <label className="block text-xs text-slate-300">
-                  Feedback on the e-pamphlet (min {MIN_CHARS} characters, max {MAX_CHARS})
+                  Feedback on the e-pamphlet (max {MAX_CHARS} characters)
                 </label>
                 <textarea
                   name="feedback"
                   value={feedback}
                   onChange={handleFeedbackChange}
                   rows={6}
-                  minLength={MIN_CHARS}
                   maxLength={MAX_CHARS}
                   required
                   className="w-full rounded-lg border border-slate-700 bg-slate-950 text-xs p-3 outline-none 
@@ -171,16 +163,13 @@ export default function Home() {
                 />
                 <div className="flex justify-between text-[10px] text-slate-400">
                   <span>{charCount} / {MAX_CHARS} characters</span>
-                  {charCount < MIN_CHARS && (
-                    <span>Need at least {MIN_CHARS - charCount} more characters</span>
-                  )}
                 </div>
               </div>
 
-              {/* Status + submit */}
+              {/* Status */}
               {status === "error" && (
                 <p className="text-[10px] text-red-400">
-                  Please pick Print A or Print B and write at least {MIN_CHARS} characters of feedback.
+                  Please pick Print A or Print B and write something in the feedback box.
                 </p>
               )}
               {status === "success" && (
