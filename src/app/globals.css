@@ -1,17 +1,39 @@
 @import "tailwindcss";
 
 :root {
+  /* Colors */
+  --background: #0a0a0a;
+  --foreground: #ededed;
+
+  /* These are filled in by next/font in layout.tsx */
   --font-greatvibes: "";
   --font-pressstart2p: "";
+
+  /* New logical font roles */
+  --font-title: "Gagalin", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-body: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
 }
 
+/* Fancy script (if you still use it elsewhere) */
 .font-fancy {
   font-family: var(--font-greatvibes);
 }
 
+/* Pixel / retro font (Press Start 2P from next/font) */
 .font-press {
   font-family: var(--font-pressstart2p);
   letter-spacing: 0.5px;
+}
+
+/* New helpers */
+.font-title {
+  font-family: var(--font-title);
+}
+
+.font-body {
+  font-family: var(--font-body);
 }
 
 .perspective-1000 {
@@ -43,5 +65,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
 }
