@@ -44,8 +44,8 @@ export default function Home() {
               End Inflation Canada
             </h1>
 
-            <p className="text-slate-300 text-[11px] md:text-xs">
-              Help us AB test our first paper pamphlet. All feedback appreciated ❤️
+            <p className="text-slate-300 text-[6px] md:text-[10px] leading-tight whitespace-nowrap">
+              Help us AB get our first paper pamphlet by voting below ❤️
             </p>
           </div>
 
