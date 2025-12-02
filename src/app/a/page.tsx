@@ -251,7 +251,7 @@ export default function PamphletE() {
                         at:
                       </p>
                       <p className="mt-2 font-semibold">
-                        <span className="text-white">www.Stop</span>
+                        <span className="text-white">www.End</span>
                         <span className="text-[#ff3b30]">Inflation</span>
                         <span className="text-white">
                           Canada.com/politician
