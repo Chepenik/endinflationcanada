@@ -109,7 +109,7 @@ export default function Home() {
             >
               <input type="hidden" name="_subject" value="EndInflationCanada feedback" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="/success" />
+              <input type="hidden" name="_next" value="https://www.EndInflationCanada.com/success" />
               <input type="hidden" name="_template" value="table" />
 
               {/* Vote A/B */}
