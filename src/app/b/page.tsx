@@ -1,80 +1,354 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
 
-export default function PamphletBComingSoon() {
+const SHARE_URL = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+  "https://www.endinflationcanada.com/"
+)}&text=${encodeURIComponent(
+  "You’re being stolen from by inflation. Read this free e-pamphlet:"
+)}`;
+
+type PageMeta = {
+  label: string;
+  counter: string;
+};
+
+const pages: PageMeta[] = [
+  { label: "P.B.1", counter: "1/6" },
+  { label: "P.B.2", counter: "2/6" },
+  { label: "P.B.3", counter: "3/6" },
+  { label: "P.B.4", counter: "4/6" },
+  { label: "P.B.5", counter: "5/6" },
+  { label: "P.B.6", counter: "6/6" },
+];
+
+export default function PamphletB() {
+  const [pageIndex, setPageIndex] = useState(0);
+  const meta = pages[pageIndex];
+
+  const isFirst = pageIndex === 0;
+  const isLast = pageIndex === pages.length - 1;
+
+  const goPrev = () => {
+    if (!isFirst) setPageIndex((prev) => prev - 1);
+  };
+
+  const goNext = () => {
+    if (!isLast) setPageIndex((prev) => prev + 1);
+  };
+
   return (
-    <main className="min-h-screen w-full bg-gradient-to-b from-black via-[#050814] to-black text-white flex flex-col">
-      {/* Top Bar */}
-      <header className="w-full px-4 py-3 border-b border-slate-800 flex justify-between items-center">
-        <Link
-          href="/"
-          className="text-xs border border-slate-600 px-3 py-1 rounded hover:border-[#F7931A] hover:text-[#F7931A] transition font-press"
+    <main className="min-h-screen bg-black flex items-center justify-center px-3 py-4 md:px-4 md:py-8 text-white">
+      {/* Phone-style card that always fits inside the viewport */}
+      <section className="w-full max-w-[420px]">
+        <div
+          className="relative w-full mx-auto h-[90vh] max-h-[720px]
+                     rounded-[2rem]
+                     bg-gradient-to-br from-[#050509] via-[#050509] to-[#080910]
+                     shadow-[0_0_40px_rgba(0,0,0,0.9)]
+                     overflow-hidden"
         >
-          ← Back
-        </Link>
+          <div className="h-full w-full px-5 pt-7 pb-5 flex flex-col">
+            {/* CONTENT AREA (scrolls if needed, buttons stay pinned) */}
+            <div className="flex-1 space-y-6 overflow-y-auto pr-1">
+              {/* PAGE 1 – INFLATION IS THEFT */}
+              {pageIndex === 0 && (
+                <>
+                  <h1
+                    className="font-title text-[2rem] leading-snug tracking-[0.18em]
+                               text-[#ff3b30] uppercase"
+                  >
+                    INFLATION IS
+                    <br />
+                    THEFT
+                  </h1>
 
-        <span className="text-[10px] text-slate-400 font-press tracking-[0.18em] uppercase">
-          Plan B · Pamphlet A
-        </span>
-      </header>
+                  <div className="mt-6 text-[0.95rem] leading-relaxed text-slate-100 font-body max-w-[90%]">
+                    <p>
+                      Currency inflation steals our time and makes life more
+                      expensive.
+                    </p>
+                    <p className="mt-4">
+                      This pamphlet contains the truth about inflation and how
+                      you can protect yourself from theft by saving in sound
+                      money.
+                    </p>
+                  </div>
 
-      {/* Center Content */}
-      <section className="flex-1 flex items-center justify-center px-4 py-10">
-        <div className="relative w-full max-w-xl rounded-3xl border border-white/10 bg-gradient-to-br from-[#1b0a22] via-[#050814] to-[#0b1024] shadow-[0_0_60px_rgba(247,147,26,0.25)] px-8 py-10 text-center">
-          <p className="font-press text-[11px] tracking-[0.28em] uppercase text-slate-300">
-            Canadian Orange Party
-          </p>
+                  <div className="mt-10 font-body text-sm">
+                    <p>
+                      <span className="text-white">www.End</span>
+                      <span className="text-[#ff3b30]">Inflation</span>
+                      <span className="text-white">Canada.com</span>
+                    </p>
+                  </div>
+                </>
+              )}
 
-          <h1 className="mt-4 font-press text-2xl sm:text-3xl md:text-4xl tracking-[0.08em] text-white">
-            Plan B Pamphlet · Coming Soon
-          </h1>
+              {/* PAGE 2 – LIES We’re told */}
+              {pageIndex === 1 && (
+                <>
+                  <div className="flex items-baseline gap-3">
+                    <span
+                      className="font-title text-[2.3rem] leading-none tracking-[0.22em]
+                                 text-[#ff3b30] uppercase"
+                    >
+                      LIES
+                    </span>
+                    <span className="font-body text-[0.9rem] text-slate-100">
+                      We&apos;re told
+                    </span>
+                  </div>
 
-          <p className="mt-5 text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
-            We&apos;re polishing the first official{" "}
-            <span className="text-[#F7931A] font-press tracking-[0.14em]">
-              Canadian Orange Party
-            </span>{" "}
-            pamphlet. It will break down inflation, Bitcoin, and how everyday
-            Canadians can opt out of the fiat clown show.
-          </p>
+                  <div className="mt-8 space-y-8 text-[0.95rem] font-body max-w-[96%]">
+                    <div>
+                      <p className="text-[#ff3b30] font-semibold">
+                        “Inflation is necessary”
+                      </p>
+                      <p className="mt-2 text-[#f9d44a]">
+                        Truth: Theft is never necessary and it&apos;s always
+                        wrong.
+                      </p>
+                    </div>
 
-          <div className="mt-8 flex flex-col items-center gap-3 text-[11px] text-slate-400">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-              <span className="h-2 w-2 rounded-full bg-[#F7931A] animate-pulse" />
-              <span className="font-press tracking-[0.18em] uppercase">
-                In layout &amp; review
-              </span>
+                    <div>
+                      <p className="text-[#ff3b30] font-semibold">
+                        “It&apos;s only 1–2% per year”
+                      </p>
+                      <p className="mt-2 text-[#f9d44a]">
+                        Truth: Over the past 5 years the government has stolen
+                        an annual average of 8.5% of our purchasing power.
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-[#ff3b30] font-semibold">
+                        “It&apos;s normal and fine”
+                      </p>
+                      <p className="mt-2 text-[#f9d44a]">
+                        Truth: It&apos;s evil, immoral, wrong, harmful and
+                        fraudulent.
+                      </p>
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {/* PAGE 3 – FRAUDULENT CURRENCY vs SOUND MONEY */}
+              {pageIndex === 2 && (
+                <>
+                  <div className="mt-2 flex h-[70vh] rounded-xl overflow-hidden border border-black/40">
+                    {/* Left side – Fraudulent currency */}
+                    <div className="w-1/2 bg-black px-4 py-5 flex flex-col">
+                      <h2 className="font-title text-[1.2rem] leading-tight tracking-[0.14em] text-[#ff3b30] uppercase mb-8">
+                        FRAUDULENT
+                        <br />
+                        CURRENCY
+                      </h2>
+
+                      <div className="space-y-4 font-body text-sm text-[#ff3b30]">
+                        <p>Corrupt</p>
+                        <p>Immoral</p>
+                        <p>Deceptive</p>
+                        <p>Theft</p>
+                        <p>Erodes purchasing power</p>
+                        <p>Evil</p>
+                      </div>
+                    </div>
+
+                    {/* Right side – Sound money */}
+                    <div className="w-1/2 bg-[#f97316] px-4 py-5 flex flex-col">
+                      <h2 className="font-title text-[1.3rem] leading-tight tracking-[0.14em] text-white uppercase mb-8">
+                        SOUND
+                        <br />
+                        MONEY
+                      </h2>
+
+                      <div className="space-y-4 font-body text-sm text-white">
+                        <p>Incorruptible</p>
+                        <p>Moral</p>
+                        <p>Honest</p>
+                        <p>Protection</p>
+                        <p>Increases purchasing power</p>
+                        <p>Good</p>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {/* PAGE 4 – 3 Steps to Protect Yourself */}
+              {pageIndex === 3 && (
+                <>
+                  <h1
+                    className="font-title text-[2rem] leading-snug tracking-[0.18em]
+                               text-[#f9d44a] uppercase"
+                  >
+                    3 STEPS TO
+                    <br />
+                    PROTECT YOURSELF
+                  </h1>
+
+                  <div className="mt-7 space-y-8 text-[0.95rem] font-body text-slate-100 max-w-[96%]">
+                    <div>
+                      <p className="font-semibold text-[#f9d44a]">
+                        1. Study Money
+                      </p>
+                      <p className="mt-2">
+                        Learn the difference between money that erodes your time
+                        and money that protects your time.
+                      </p>
+                      <div className="mt-3 flex items-center gap-2 text-sm">
+                        <span>Learn more</span>
+                        <span className="text-xl">→</span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="font-semibold text-[#ff3b30]">
+                        2. Avoid scams, schemes and untested
+                        technologies/tokens known as “CRYPTO”
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="font-semibold text-[#F7931A]">
+                        3. Save in Bitcoin
+                      </p>
+                      <p className="mt-2">
+                        Save your time in a global, finite, transparent form of
+                        money bound by energy called Bitcoin.
+                      </p>
+                      <div className="mt-3 flex items-center gap-2 text-sm">
+                        <span>Learn more</span>
+                        <span className="text-xl">→</span>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {/* PAGE 5 – Help Others */}
+              {pageIndex === 4 && (
+                <>
+                  <h1
+                    className="font-title text-[2rem] leading-snug tracking-[0.18em]
+                               text-[#f9d44a] uppercase"
+                  >
+                    HELP OTHERS
+                  </h1>
+
+                  <div className="mt-7 space-y-8 text-[0.95rem] font-body text-slate-100 max-w-[96%]">
+                    <div>
+                      <p className="font-semibold text-[#f9d44a]">
+                        Share this resource
+                      </p>
+                      <p className="mt-2">
+                        Help a family member or friend by giving them this
+                        pamphlet or sending them to:
+                      </p>
+                      <p className="mt-3 font-semibold">
+                        <span className="text-white">www.End</span>
+                        <span className="text-[#ff3b30]">Inflation</span>
+                        <span className="text-white">Canada.com</span>
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="font-semibold text-[#f9d44a]">
+                        Educate your politician
+                      </p>
+                      <p className="mt-2">
+                        Send the digital version of this pamphlet to your
+                        politician or copy and paste this letter in an email:
+                      </p>
+                      <p className="mt-3 font-semibold text-[#f97316]">
+                        www.EndInflationCanada.com/politician
+                      </p>
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {/* PAGE 6 – Sponsors (same layout as before) */}
+              {pageIndex === 5 && (
+                <>
+                  <h1 className="font-fancy text-[2.2rem] leading-none text-[#f97316]">
+                    Sponsors
+                  </h1>
+
+                  <div className="mt-16 space-y-10 font-title text-[1.5rem] uppercase text-[#e5e5e5]">
+                    <div>
+                      <p>The Bitcoin Coloring Book</p>
+                      <p className="mt-2 font-body text-sm uppercase tracking-[0.12em] text-[#c4c4c4]">
+                        www.bitcoincoloring.com
+                      </p>
+                    </div>
+
+                    <div>
+                      <p>SPONSOR 2</p>
+                      <p className="mt-2 font-body text-sm uppercase tracking-[0.12em] text-[#c4c4c4]">
+                        www.sponsor2.com
+                      </p>
+                    </div>
+
+                    <div>
+                      <p>SPONSOR 3</p>
+                      <p className="mt-2 font-body text-sm uppercase tracking-[0.12em] text-[#c4c4c4]">
+                        www.sponsor3.com
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-20 flex justify-end">
+                    <div className="relative w-24 h-28 rounded-md overflow-hidden bg-black">
+                      <img
+                        src="https://i.nostr.build/mt5lXdK20ge85YW9.png"
+                        alt="Maple leaf"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
 
-            <p className="max-w-sm">
-              Check back soon or head to the hub to see everything else we&apos;re
-              building for orange-pilled Canadians.
-            </p>
-          </div>
+            {/* BOTTOM CONTROLS – always visible */}
+            <div className="mt-3 flex flex-col gap-3">
+              <div className="flex items-center justify-between text-[10px] text-slate-400 font-press">
+                <button
+                  onClick={goPrev}
+                  disabled={isFirst}
+                  className="lowercase px-2 py-1 rounded disabled:opacity-30 disabled:cursor-not-allowed
+                             hover:text-[#F7931A] hover:brightness-125 transition"
+                >
+                  previous
+                </button>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="https://www.canadianorangeparty.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-press tracking-[0.12em] text-xs sm:text-sm rounded-full border border-[#F7931A]/70 bg-[#F7931A]/10 px-6 py-3 hover:bg-[#F7931A]/20 transition"
-            >
-              Visit the Canadian Orange Party Hub
-            </Link>
+                <span>{meta.counter}</span>
 
-            <Link
-              href="/"
-              className="font-press tracking-[0.12em] text-xs sm:text-sm rounded-full border border-white/15 px-6 py-3 hover:bg-white/5 transition"
-            >
-              Back to Home
-            </Link>
+                <button
+                  onClick={goNext}
+                  disabled={isLast}
+                  className="lowercase px-2 py-1 rounded disabled:opacity-30 disabled:cursor-not-allowed
+                             hover:text-[#F7931A] hover:brightness-125 transition"
+                >
+                  next
+                </button>
+              </div>
+
+              <a
+                href={SHARE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="font-body text-[0.95rem] text-sky-400 underline-offset-4 underline mx-auto"
+              >
+                Share
+              </a>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Bottom border to frame the page */}
-      <footer className="w-full h-4 bg-gradient-to-r from-transparent via-[#F7931A]/40 to-transparent blur-[2px]" />
     </main>
   );
 }

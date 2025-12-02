@@ -100,7 +100,7 @@ export default function RootLayout({
             }),
           }}
         />
-
+        
         {/* JSON-LD: Website */}
         <script
           type="application/ld+json"
