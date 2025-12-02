@@ -273,16 +273,18 @@ export default function PamphletB() {
               {/* PAGE 6 – Sponsors (same layout as before) */}
               {pageIndex === 5 && (
                 <>
-                  <h1 className="font-fancy text-[2.2rem] leading-none text-[#f97316]">
+                  <h1 className="font-fancy text-[2.2rem] leading-none text-[#f97316] mt-4">
                     Sponsors
                   </h1>
 
                   <div className="mt-16 space-y-10 font-title text-[1.5rem] uppercase text-[#e5e5e5]">
                     <div>
                       <p>The Bitcoin Coloring Book</p>
-                      <p className="mt-2 font-body text-sm uppercase tracking-[0.12em] text-[#c4c4c4]">
-                        www.bitcoincoloring.com
-                      </p>
+                      <a rel="stylesheet" href="https://bitcoincoloring.com">                       
+                        <p className="mt-2 font-body text-sm uppercase tracking-[0.12em] text-[#c4c4c4]">
+                          bitcoincoloring.com
+                        </p>
+                      </a>
                     </div>
 
                     <div>
