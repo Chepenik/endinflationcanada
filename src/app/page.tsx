@@ -147,9 +147,6 @@ export default function Home() {
 
               {/* Feedback textarea */}
               <div className="space-y-2">
-                <label className="block text-xs text-slate-300">
-                  Feedback on the e-pamphlet (max {MAX_CHARS} characters)
-                </label>
                 <textarea
                   name="feedback"
                   value={feedback}
