@@ -115,7 +115,7 @@ export default function Home() {
               {/* Vote A/B */}
               <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-4 text-xs">
                 <span className="text-slate-300 text-center md:text-left">
-                  Which print pamphlet do you prefer?
+                  Which is better?
                 </span>
                 <div className="flex items-center justify-center gap-4">
                   <label className="inline-flex items-center gap-1 cursor-pointer">

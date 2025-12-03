@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import React from "react";
 import "./globals.css";
-import { Great_Vibes, Press_Start_2P } from "next/font/google";
+import { Great_Vibes, Press_Start_2P, Bebas_Neue, Oswald, Anton, Rubik_Glitch, Creepster, Eater } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"; 
 
 const greatVibes = Great_Vibes({
@@ -14,6 +14,43 @@ const pressStart2P = Press_Start_2P({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-pressstart2p",
+});
+
+// Distressed/Grungy font options for top headings
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bebas",
+});
+
+const oswald = Oswald({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-oswald",
+});
+
+const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-anton",
+});
+
+const rubikGlitch = Rubik_Glitch({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-rubik-glitch",
+});
+
+const creepster = Creepster({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-creepster",
+});
+
+const eater = Eater({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-eater",
 });
 
 // --- META IMAGE USED ON THE COP SITE ---
@@ -81,7 +118,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${greatVibes.variable} ${pressStart2P.variable}`}
+      className={`${greatVibes.variable} ${pressStart2P.variable} ${bebasNeue.variable} ${oswald.variable} ${anton.variable} ${rubikGlitch.variable} ${creepster.variable} ${eater.variable}`}
     >
       <head>
         {/* JSON-LD: Organization */}
