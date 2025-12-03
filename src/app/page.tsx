@@ -105,7 +105,7 @@ export default function Home() {
               action="https://formsubmit.co/CanadianOrangeParty@protonmail.com"
               method="POST"
               onSubmit={handleSubmit}
-              className="mt-4 text-left bg-slate-900 border border-slate-800 rounded-xl p-4 md:p-6 space-y-4"
+              className="mt-4 text-left bg-slate-950 border border-slate-800 rounded-xl p-4 md:p-6 space-y-4"
             >
               <input type="hidden" name="_subject" value="EndInflationCanada feedback" />
               <input type="hidden" name="_captcha" value="false" />
