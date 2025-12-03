@@ -86,7 +86,7 @@ export default function PamphletE() {
                     IS THEFT
                   </h1>
 
-                  <div className="mt-6 space-y-4 text-[0.95rem] leading-relaxed text-slate-100 font-body max-w-[92%]">
+                  <div className="mt-8 space-y-6 text-[0.95rem] leading-loose text-slate-100 font-body max-w-[92%]">
                     <p>
                       Currency inflation steals our time and makes life more
                       expensive.
@@ -115,7 +115,7 @@ export default function PamphletE() {
                     </span>
                   </div>
 
-                  <div className="mt-6 space-y-6 text-[0.95rem] font-body max-w-[95%]">
+                  <div className="mt-8 space-y-8 text-[0.95rem] font-body max-w-[95%]">
                     <div>
                       <p className="font-semibold text-slate-100">
                         LIE: “Inflation is necessary”

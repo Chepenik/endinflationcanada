@@ -100,7 +100,7 @@ export default function PamphletB() {
                     </span>
                   </div>
 
-                  <div className="mt-8 space-y-8 text-[0.95rem] font-body max-w-[96%]">
+                  <div className="mt-10 space-y-9 text-[0.95rem] font-body max-w-[96%]">
                     <div>
                       <p className="text-[#ff3b30] font-semibold">
                         “Inflation is necessary”
