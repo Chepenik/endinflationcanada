@@ -206,25 +206,25 @@ export default function PamphletE() {
                         <span className="text-[#f9d44a] font-semibold">
                           Study
                         </span>{" "}
-                        Money
+                        Money{" "}
+                        <a
+                          href="/money-101"
+                          className="text-sky-400 underline underline-offset-4"
+                        >
+                          Learn more
+                        </a>
                       </p>
                       <p className="mt-2">
                         Learn the difference between money that erodes your time
                         and money that protects your time.
                       </p>
-                      <a
-                        href="https://www.endinflationcanada.com/"
-                        className="mt-2 inline-block text-sky-400 underline underline-offset-4"
-                      >
-                        Learn more
-                      </a>
                     </div>
 
                     <div>
                       <p className="font-semibold">
                         2.{" "}
                         <span className="text-[#f97373]">
-                          Avoid “CRYPTO”
+                          Avoid "CRYPTO"
                         </span>{" "}
                         (scams, schemes and untested technologies/tokens)
                       </p>
@@ -235,18 +235,18 @@ export default function PamphletE() {
                         3. Save in{" "}
                         <span className="text-[#F7931A] font-semibold">
                           Bitcoin
-                        </span>
+                        </span>{" "}
+                        <a
+                          href="/bitcoin-101"
+                          className="text-sky-400 underline underline-offset-4"
+                        >
+                          Learn more
+                        </a>
                       </p>
                       <p className="mt-2">
                         Save your time in a global, finite, transparent form of
                         money bound by energy called Bitcoin.
                       </p>
-                      <a
-                        href="https://www.endinflationcanada.com/"
-                        className="mt-2 inline-block text-sky-400 underline underline-offset-4"
-                      >
-                        Learn more
-                      </a>
                     </div>
                   </div>
                 </>

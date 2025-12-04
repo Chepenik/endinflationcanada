@@ -63,12 +63,12 @@ export default function PamphletB() {
                     THEFT
                   </h1>
 
-                  <div className="mt-6 text-[0.95rem] leading-relaxed text-slate-100 font-body max-w-[90%]">
+                  <div className="mt-12 text-[0.95rem] leading-relaxed text-slate-100 font-body max-w-[90%]">
                     <p>
                       Currency inflation steals our time and makes life more
                       expensive.
                     </p>
-                    <p className="mt-4">
+                    <p className="mt-10">
                       This pamphlet contains the truth about inflation and how
                       you can protect yourself from theft by saving in sound
                       money.
@@ -100,7 +100,7 @@ export default function PamphletB() {
                     </span>
                   </div>
 
-                  <div className="mt-10 space-y-9 text-[0.95rem] font-body max-w-[96%]">
+                  <div className="mt-20 space-y-9 text-[0.95rem] font-body max-w-[96%]">
                     <div>
                       <p className="text-[#ff3b30] font-semibold">
                         “Inflation is necessary”
@@ -238,7 +238,7 @@ export default function PamphletB() {
                     HELP OTHERS
                   </h1>
 
-                  <div className="mt-7 space-y-8 text-[0.95rem] font-body text-slate-100 max-w-[96%]">
+                  <div className="mt-14 space-y-8 text-[0.95rem] font-body text-slate-100 max-w-[96%]">
                     <div>
                       <p className="font-semibold text-[#f9d44a]">
                         Share this resource
