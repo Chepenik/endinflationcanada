@@ -87,7 +87,7 @@ export default function ContactMP() {
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F7931A] text-white flex items-center justify-center text-[10px] font-bold">
                   5
                 </span>
-                <span>Enter your MP's email</span>
+                <span>Enter your MP&apos;s email</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F7931A] text-white flex items-center justify-center text-[10px] font-bold">

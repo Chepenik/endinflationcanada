@@ -125,7 +125,7 @@ export default function PamphletE() {
                   <div className="mt-12 space-y-8 text-[0.95rem] font-body max-w-[95%]">
                     <div>
                       <p className="font-semibold text-slate-100">
-                        LIE: "Inflation is necessary"
+                        LIE: &quot;Inflation is necessary&quot;
                       </p>
                       <p className="mt-1 text-[#f9d44a]">
                         TRUTH: Theft is never necessary and it&apos;s always
@@ -231,7 +231,7 @@ export default function PamphletE() {
                       <p className="font-semibold">
                         2.{" "}
                         <span className="text-[#f97373]">
-                          Avoid "CRYPTO"
+                          Avoid &quot;CRYPTO&quot;
                         </span>
                       </p>
                     </div>

@@ -37,7 +37,7 @@ export default function NotFound() {
               Looks like this page has been inflated away! 💸
             </p>
             <p className="text-slate-400 text-xs md:text-sm">
-              The page you're looking for doesn't exist or has been moved.
+              The page you&apos;re looking for doesn&apos;t exist or has been moved.
             </p>
           </div>
 
@@ -62,7 +62,7 @@ export default function NotFound() {
           {/* Fun fact */}
           <div className="mt-8 pt-6 border-t border-slate-800">
             <p className="text-[10px] text-slate-500 italic">
-              "Inflation is taxation without legislation." — Milton Friedman
+              &quot;Inflation is taxation without legislation.&quot; — Milton Friedman
             </p>
           </div>
         </div>
