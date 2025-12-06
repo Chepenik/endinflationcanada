@@ -2,11 +2,7 @@
 
 import { useState } from "react";
 
-const SHARE_URL = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-  "https://www.endinflationcanada.com/"
-)}&text=${encodeURIComponent(
-  "You’re being stolen from by inflation. Read this free e-pamphlet:"
-)}`;
+const E_PAMPHLET_URL = "https://www.endinflationcanada.com/c";
 
 type PageMeta = {
   label: string;
@@ -25,6 +21,7 @@ const pages: PageMeta[] = [
 
 export default function PamphletE() {
   const [pageIndex, setPageIndex] = useState(0);
+  const [copied, setCopied] = useState(false);
   const meta = pages[pageIndex];
 
   const isFirst = pageIndex === 0;
@@ -38,18 +35,28 @@ export default function PamphletE() {
     if (!isLast) setPageIndex((prev) => prev + 1);
   };
 
+  const handleShare = async () => {
+    try {
+      await navigator.clipboard.writeText(E_PAMPHLET_URL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-black flex items-center justify-center px-3 py-4 md:px-4 md:py-8 text-white">
       {/* Phone-style card that always fits inside the viewport */}
       <section className="w-full max-w-[420px]">
         <div
-          className="relative w-full mx-auto h-[90vh] max-h-[720px]
+          className="relative w-full mx-auto h-[95vh] max-h-[800px]
                      rounded-[2rem]
                      bg-gradient-to-br from-[#050509] via-[#050509] to-[#080910]
                      shadow-[0_0_40px_rgba(0,0,0,0.9)]
                      overflow-hidden"
         >
-          <div className="h-full w-full px-5 pt-7 pb-5 flex flex-col">
+          <div className="h-full w-full px-5 pt-8 pb-5 flex flex-col">
             {/* CONTENT AREA (scrolls if needed, buttons stay pinned) */}
             <div className="flex-1 space-y-6 overflow-y-auto pr-1">
               {/* PAGE 1 */}
@@ -64,7 +71,7 @@ export default function PamphletE() {
                     STOLEN FROM
                   </h1>
 
-                  <div className="mt-6 text-[0.95rem] leading-relaxed text-slate-100 font-body max-w-[90%]">
+                  <div className="mt-12 text-[0.95rem] leading-relaxed text-slate-100 font-body max-w-[90%]">
                     <p>
                       This resource contains instructions on how to stop
                       yourself and others from being robbed by the fraud of
@@ -86,7 +93,7 @@ export default function PamphletE() {
                     IS THEFT
                   </h1>
 
-                  <div className="mt-8 space-y-6 text-[0.95rem] leading-loose text-slate-100 font-body max-w-[92%]">
+                  <div className="mt-12 space-y-6 text-[0.95rem] leading-loose text-slate-100 font-body max-w-[92%]">
                     <p>
                       Currency inflation steals our time and makes life more
                       expensive.
@@ -115,10 +122,10 @@ export default function PamphletE() {
                     </span>
                   </div>
 
-                  <div className="mt-8 space-y-8 text-[0.95rem] font-body max-w-[95%]">
+                  <div className="mt-12 space-y-8 text-[0.95rem] font-body max-w-[95%]">
                     <div>
                       <p className="font-semibold text-slate-100">
-                        LIE: “Inflation is necessary”
+                        LIE: "Inflation is necessary"
                       </p>
                       <p className="mt-1 text-[#f9d44a]">
                         TRUTH: Theft is never necessary and it&apos;s always
@@ -159,7 +166,7 @@ export default function PamphletE() {
                     FIAT CURRENCY
                   </h1>
 
-                  <div className="mt-5 space-y-4 text-[0.95rem] leading-relaxed font-body text-slate-100 max-w-[96%]">
+                  <div className="mt-12 space-y-4 text-[0.95rem] leading-relaxed font-body text-slate-100 max-w-[96%]">
                     <p>
                       Corrupt, deceptive, steals our purchasing power, is
                       immoral, fraudulent and downright evil.
@@ -199,7 +206,7 @@ export default function PamphletE() {
                     PROTECT YOURSELF
                   </h1>
 
-                  <div className="mt-7 space-y-6 text-[0.95rem] font-body text-slate-100 max-w-[96%]">
+                  <div className="mt-12 space-y-6 text-[0.95rem] font-body text-slate-100 max-w-[96%]">
                     <div>
                       <p className="font-semibold">
                         1.{" "}
@@ -225,8 +232,7 @@ export default function PamphletE() {
                         2.{" "}
                         <span className="text-[#f97373]">
                           Avoid "CRYPTO"
-                        </span>{" "}
-                        (scams, schemes and untested technologies/tokens)
+                        </span>
                       </p>
                     </div>
 
@@ -264,17 +270,20 @@ export default function PamphletE() {
                     OTHERS
                   </h1>
 
-                  <div className="mt-7 space-y-6 text-[0.95rem] font-body text-slate-100 max-w-[96%]">
+                  <div className="mt-12 space-y-6 text-[0.95rem] font-body text-slate-100 max-w-[96%]">
                     <div>
                       <p className="font-semibold text-[#f9d44a]">
                         1. Share this resource
                       </p>
                       <p className="mt-2">
-                        Help a family member or friend by sharing this
-                        e-pamphlet or sending them to:
-                      </p>
-                      <p className="mt-2 font-semibold">
-                        www.EndInflationCanada.com
+                        Help a family member or friend by{" "}
+                        <button
+                          onClick={handleShare}
+                          className="text-sky-400 underline underline-offset-4 cursor-pointer"
+                        >
+                          sharing
+                        </button>{" "}
+                        this e-pamphlet.
                       </p>
                     </div>
 
@@ -283,11 +292,20 @@ export default function PamphletE() {
                         2. Educate your politician
                       </p>
                       <p className="mt-2">
-                        Share this e-pamphlet with your politician or send them
-                        the letter found here:
-                      </p>
-                      <p className="mt-2 font-semibold">
-                        www.EndInflationCanada.com/letter
+                        <button
+                          onClick={handleShare}
+                          className="text-sky-400 underline underline-offset-4 cursor-pointer"
+                        >
+                          Share
+                        </button>{" "}
+                        this e-pamphlet with your politician or send them the{" "}
+                        <a
+                          href="/politician"
+                          className="text-sky-400 underline underline-offset-4"
+                        >
+                          letter
+                        </a>{" "}
+                        found here.
                       </p>
                     </div>
                   </div>
@@ -302,7 +320,19 @@ export default function PamphletE() {
                   </h1>
 
                   <div className="mt-10 space-y-6 font-press text-[0.95rem] tracking-[0.2em] text-slate-200">
-                    <p>SPONSOR 1 LOGO</p>
+                    <div>
+                      <p className="font-title text-[1.5rem] uppercase text-[#e5e5e5]">
+                        The Bitcoin Coloring Book
+                      </p>
+                      <a
+                        href="https://bitcoincoloring.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-2 font-body text-sm uppercase tracking-[0.12em] text-[#c4c4c4] block"
+                      >
+                        bitcoincoloring.com
+                      </a>
+                    </div>
                     <p>SPONSOR 2 LOGO</p>
                     <p>SPONSOR 3 LOGO</p>
                   </div>
@@ -347,14 +377,12 @@ export default function PamphletE() {
                 </button>
               </div>
 
-              <a
-                href={SHARE_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="font-body text-[0.95rem] text-sky-400 underline-offset-4 underline mx-auto"
+              <button
+                onClick={handleShare}
+                className="font-body text-[0.95rem] text-sky-400 underline-offset-4 underline mx-auto cursor-pointer"
               >
-                Share
-              </a>
+                {copied ? "Copied!" : "Share"}
+              </button>
             </div>
           </div>
         </div>

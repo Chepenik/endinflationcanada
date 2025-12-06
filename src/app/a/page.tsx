@@ -2,11 +2,7 @@
 
 import { useState } from "react";
 
-const SHARE_URL = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-  "https://www.endinflationcanada.com/"
-)}&text=${encodeURIComponent(
-  "You’re being stolen from by inflation. Read this free e-pamphlet:"
-)}`;
+const E_PAMPHLET_URL = "https://www.endinflationcanada.com/c";
 
 type PageMeta = {
   label: string;
@@ -24,6 +20,7 @@ const pages: PageMeta[] = [
 
 export default function PamphletE() {
   const [pageIndex, setPageIndex] = useState(0);
+  const [copied, setCopied] = useState(false);
   const meta = pages[pageIndex];
 
   const isFirst = pageIndex === 0;
@@ -35,6 +32,16 @@ export default function PamphletE() {
 
   const goNext = () => {
     if (!isLast) setPageIndex((prev) => prev + 1);
+  };
+
+  const handleShare = async () => {
+    try {
+      await navigator.clipboard.writeText(E_PAMPHLET_URL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
   };
 
   return (
@@ -331,14 +338,12 @@ export default function PamphletE() {
                 </button>
               </div>
 
-              <a
-                href={SHARE_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="font-body text-[0.95rem] text-sky-400 underline-offset-4 underline mx-auto"
+              <button
+                onClick={handleShare}
+                className="font-body text-[0.95rem] text-sky-400 underline-offset-4 underline mx-auto cursor-pointer"
               >
-                Share
-              </a>
+                {copied ? "Copied!" : "Share"}
+              </button>
             </div>
           </div>
         </div>
