@@ -205,16 +205,14 @@ export default function PamphletB() {
                         Learn the difference between money that erodes your time
                         and money that protects your time.
                       </p>
-                      <div className="mt-3 flex items-center gap-2 text-sm">
-                        <span>Learn more</span>
-                        <span className="text-xl">→</span>
-                      </div>
+                      <p className="mt-2 text-sky-400">
+                        [QR code]
+                      </p>
                     </div>
 
                     <div>
                       <p className="font-semibold text-[#ff3b30]">
-                        2. Avoid scams, schemes and untested
-                        technologies/tokens known as “CRYPTO”
+                        2. AVOID CRYPTO
                       </p>
                     </div>
 
@@ -226,10 +224,9 @@ export default function PamphletB() {
                         Save your time in a global, finite, transparent form of
                         money bound by energy called Bitcoin.
                       </p>
-                      <div className="mt-3 flex items-center gap-2 text-sm">
-                        <span>Learn more</span>
-                        <span className="text-xl">→</span>
-                      </div>
+                      <p className="mt-2 text-sky-400">
+                        [QR code]
+                      </p>
                     </div>
                   </div>
                 </>
@@ -266,11 +263,7 @@ export default function PamphletB() {
                         Educate your politician
                       </p>
                       <p className="mt-2">
-                        Send the digital version of this pamphlet to your
-                        politician or copy and paste this letter in an email:
-                      </p>
-                      <p className="mt-3 font-semibold text-[#f97316]">
-                        www.EndInflationCanada.com/politician
+                        Give this pamphlet to your politician or email them the letter at the link below: endinflationcanada.com/politician
                       </p>
                     </div>
                   </div>

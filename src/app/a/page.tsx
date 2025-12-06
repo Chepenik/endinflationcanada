@@ -49,13 +49,13 @@ export default function PamphletE() {
       {/* Phone-style card that always fits inside the viewport */}
       <section className="w-full max-w-[420px]">
         <div
-          className="relative w-full mx-auto h-[90vh] max-h-[720px]
+          className="relative w-full mx-auto h-[95vh] max-h-[800px]
                      rounded-[2rem]
                      bg-gradient-to-br from-[#050509] via-[#050509] to-[#080910]
                      shadow-[0_0_40px_rgba(0,0,0,0.9)]
                      overflow-hidden"
         >
-          <div className="h-full w-full px-5 pt-7 pb-5 flex flex-col">
+          <div className="h-full w-full px-5 pt-8 pb-5 flex flex-col">
             {/* CONTENT AREA (scrolls if needed, buttons stay pinned) */}
             <div className="flex-1 space-y-6 overflow-y-auto pr-1">
               {/* PAGE 1 – YOU'RE BEING STOLEN FROM */}
@@ -70,7 +70,7 @@ export default function PamphletE() {
                     STOLEN FROM
                   </h1>
 
-                  <div className="mt-6 text-[0.95rem] leading-relaxed text-slate-100 font-body max-w-[90%]">
+                  <div className="mt-12 text-[0.95rem] leading-relaxed text-slate-100 font-body max-w-[90%]">
                     <p>
                       This pamphlet contains instructions on how to stop
                       yourself and others from being robbed by the fraud of
@@ -91,12 +91,12 @@ export default function PamphletE() {
               {/* PAGE 2 – Inflation is a FRAUD */}
               {pageIndex === 1 && (
                 <>
-                  <h1 className="font-title text-[1.6rem] leading-snug tracking-[0.12em] uppercase">
+                  <h1 className="font-title text-[2rem] leading-snug tracking-[0.18em] uppercase">
                     <span className="text-white">Inflation is a </span>
                     <span className="text-[#ff3b30]">FRAUD</span>
                   </h1>
 
-                  <div className="mt-8 space-y-6 text-[0.95rem] leading-loose text-slate-100 font-body max-w-[92%]">
+                  <div className="mt-12 space-y-6 text-[0.95rem] leading-loose text-slate-100 font-body max-w-[92%]">
                     <p>
                       Inflation is a fraud committed by bankers who increase the
                       currency supply.
@@ -130,7 +130,7 @@ export default function PamphletE() {
                     FIAT CURRENCY
                   </h1>
 
-                  <div className="mt-5 space-y-4 text-[0.95rem] leading-relaxed font-body text-slate-100 max-w-[96%]">
+                  <div className="mt-12 space-y-4 text-[0.95rem] leading-relaxed font-body text-slate-100 max-w-[96%]">
                     <p>
                       Corrupt, deceptive, steals our purchasing power, is
                       immoral, fraudulent and downright evil.
@@ -170,7 +170,7 @@ export default function PamphletE() {
                     PROTECT YOURSELF
                   </h1>
 
-                  <div className="mt-7 space-y-6 text-[0.95rem] font-body text-slate-100 max-w-[96%]">
+                  <div className="mt-12 space-y-6 text-[0.95rem] font-body text-slate-100 max-w-[96%]">
                     <div>
                       <p className="font-semibold">
                         1.{" "}
@@ -182,20 +182,16 @@ export default function PamphletE() {
                         Learn the difference between money that erodes your time
                         and money that protects your time.
                       </p>
-                      <a
-                        href="https://www.endinflationcanada.com/"
-                        className="mt-2 inline-block text-sky-400 underline underline-offset-4"
-                      >
-                        Learn more
-                      </a>
+                      <p className="mt-2 text-sky-400">
+                        [QR code]
+                      </p>
                     </div>
 
                     <div>
                       <p className="font-semibold">
                         2.{" "}
                         <span className="text-[#ff3b30]">
-                          Avoid scams, schemes and untested
-                          technologies/tokens known as &quot;CRYPTO&quot;
+                          AVOID CRYPTO
                         </span>
                       </p>
                     </div>
@@ -211,12 +207,9 @@ export default function PamphletE() {
                         Save your time in a global, finite, transparent form of
                         money bound by energy called Bitcoin.
                       </p>
-                      <a
-                        href="https://www.endinflationcanada.com/"
-                        className="mt-2 inline-block text-sky-400 underline underline-offset-4"
-                      >
-                        Learn more
-                      </a>
+                      <p className="mt-2 text-sky-400">
+                        [QR code]
+                      </p>
                     </div>
                   </div>
                 </>
@@ -232,7 +225,7 @@ export default function PamphletE() {
                     HELP OTHERS
                   </h1>
 
-                  <div className="mt-7 space-y-6 text-[0.95rem] font-body text-slate-100 max-w-[96%]">
+                  <div className="mt-12 space-y-6 text-[0.95rem] font-body text-slate-100 max-w-[96%]">
                     <div>
                       <p className="font-semibold text-[#f9d44a]">
                         Share this resource
@@ -253,16 +246,7 @@ export default function PamphletE() {
                         Educate your politician
                       </p>
                       <p className="mt-2">
-                        Send the digital version of this pamphlet to your
-                        politician or copy and paste the letter made available
-                        at:
-                      </p>
-                      <p className="mt-2 font-semibold">
-                        <span className="text-white">www.End</span>
-                        <span className="text-[#ff3b30]">Inflation</span>
-                        <span className="text-white">
-                          Canada.com/politician
-                        </span>
+                        Give this pamphlet to your politician or email them the letter at the link below: endinflationcanada.com/politician
                       </p>
                     </div>
                   </div>
