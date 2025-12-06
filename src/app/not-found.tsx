@@ -51,7 +51,7 @@ export default function NotFound() {
               ← Return Home
             </Link>
             <Link
-              href="/c"
+              href="/e-pamphlet"
               className="px-6 py-3 rounded-lg border border-slate-600 bg-slate-800 text-sm
                          hover:border-[#F7931A] hover:text-[#F7931A] hover:shadow-[0_0_10px_#F7931A] transition"
             >

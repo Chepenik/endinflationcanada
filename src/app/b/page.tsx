@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const E_PAMPHLET_URL = "https://www.endinflationcanada.com/c";
+const E_PAMPHLET_URL = "https://www.endinflationcanada.com/e-pamphlet";
 
 type PageMeta = {
   label: string;
@@ -62,7 +62,7 @@ export default function PamphletB() {
               {pageIndex === 0 && (
                 <>
                   <h1
-                    className="font-title text-[2rem] leading-snug tracking-[0.18em]
+                    className="font-title text-[2.2rem] leading-snug tracking-[0.18em]
                                text-[#ff3b30] uppercase"
                   >
                     INFLATION IS
@@ -263,7 +263,13 @@ export default function PamphletB() {
                         Educate your politician
                       </p>
                       <p className="mt-2">
-                        Give this pamphlet to your politician or email them the letter at the link below: endinflationcanada.com/politician
+                        Give this pamphlet to your politician or email them the letter at the link below:{" "}
+                        <a
+                          href="/politician"
+                          className="text-sky-400 underline underline-offset-4"
+                        >
+                          endinflationcanada.com/politician
+                        </a>
                       </p>
                     </div>
                   </div>

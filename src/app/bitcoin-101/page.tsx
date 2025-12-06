@@ -15,7 +15,7 @@ export default function Bitcoin101() {
 
           <div className="mt-12">
             <a
-              href="/c"
+              href="/e-pamphlet"
               className="inline-block text-sky-400 underline underline-offset-4 hover:text-sky-300 transition"
             >
               ← Back to e-pamphlet

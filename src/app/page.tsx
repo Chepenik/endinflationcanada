@@ -72,7 +72,7 @@ export default function Home() {
             </a>
 
             <a
-              href="/c"
+              href="/e-pamphlet"
               target="_blank"
               rel="noopener noreferrer"
               className="py-3 px-4 rounded-lg border border-slate-600 bg-slate-800 text-slate-200 transition 

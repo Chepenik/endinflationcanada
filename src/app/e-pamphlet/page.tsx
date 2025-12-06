@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const E_PAMPHLET_URL = "https://www.endinflationcanada.com/c";
+const E_PAMPHLET_URL = "https://www.endinflationcanada.com/e-pamphlet";
 
 type PageMeta = {
   label: string;
